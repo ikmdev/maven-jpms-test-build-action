@@ -16,6 +16,29 @@ jobs:
           - activej-common
           - antlr4-runtime
           - auto-service
+          - bugsplat
+          - directory-watcher
+          - eclipse-collections-api
+          - eclipse-collections
+          - guava
+          - hapi-fhir-base
+          - hapi-fhir-caching-api
+          - hapi-fhir-r4
+          - hapi-fhir-structures-r4
+          - hapi-fhir-utilities
+          - httpclient
+          - httpcore
+          - httpmime
+          - java-inject
+          - jgit
+          - jheaps
+          - jsr305
+          - mvstore
+          - ontology-model
+          - protobuf-java
+          - record-builder-core
+          - roaringbitmap
+          - snorocket
     runs-on: ubuntu-24.04
     steps:
      - name: Test Build JPMS Repos
