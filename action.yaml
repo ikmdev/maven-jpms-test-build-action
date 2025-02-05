@@ -5,7 +5,7 @@ description: Utilized for creating releases of projects
 inputs:
   repo_name:
     description: "Name of repo to check out"
-    required: true;
+    required: true
   java_version:
     description: "Java Version"
     required: false 
@@ -16,24 +16,26 @@ runs:
   using: "composite"
   steps:
     - name: Checkout Code Repository -- ${{inputs.repo_name}}
-       uses: actions/checkout@v4
-       with:
+      uses: actions/checkout@v4
+      with:
          repository: ikmdev/jpms-${{inputs.repo_name}}
     
-     - name: Setup Java
-       uses: actions/setup-java@v4
-       with:
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
             distribution: 'zulu'
             java-version: ${{inputs.java_version}}
 
-     - name: Build IKMDEV Code -- ${{inputs.repo_name}}
-       run: |
+    - name: Build IKMDEV Code -- ${{inputs.repo_name}}
+      shell: bash
+      run: |
          ./mvnw clean install \
            -Dmaven.build.cache.enabled=false --batch-mode -e \
            -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
       
-     - name: Verify Size
-       run: |
+    - name: Verify Size
+      shell: bash
+      run: |
           size=$(find ./target -maxdepth 1 -type f -name '*[!-javadoc][!-sources].jar' -exec jar tf  {} \; | grep -c 'dev.ikm.jpms' | xargs )
           if [ "$size" -lt "2" ]; then
               echo "ERROR: jar does not contain ikmdev packages"
