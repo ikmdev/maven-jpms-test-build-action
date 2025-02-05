@@ -10,6 +10,7 @@ jobs:
   build-job:
     name: Build Job -- ${{matrix.repos}}
     strategy:
+      max-parallel: 1
       matrix:
         repos:
           - activej-bytebuf
