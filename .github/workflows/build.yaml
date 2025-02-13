@@ -10,11 +10,10 @@ jobs:
   build-job:
     name: Build Job -- ${{matrix.repos}}
     strategy:
-      # max-parallel: 1
       matrix:
         repos:
           - activej-bytebuf
-          # - activej-common
+          - activej-common
           - antlr4-runtime
           - auto-service
           - bugsplat
@@ -38,7 +37,6 @@ jobs:
           - ontology-model
           - protobuf-java
           - record-builder-core
-          - roaringbitmap
           - snorocket
     runs-on: ubuntu-24.04
     steps:
