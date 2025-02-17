@@ -32,6 +32,7 @@ jobs:
           - protobuf-java
           - record-builder-core
           - snorocket
+          - spotbugs-annotation
     runs-on: ubuntu-24.04
     steps:
      - name: Test Build JPMS Repos
