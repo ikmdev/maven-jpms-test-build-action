@@ -21,7 +21,10 @@ jobs:
           - eclipse-collections-api
           - eclipse-collections
           - httpclient
+          # - httpclient5
           - httpcore
+          - httpcore5
+          # - httpcore5-h2
           - httpmime
           - javax-inject
           - jgit
