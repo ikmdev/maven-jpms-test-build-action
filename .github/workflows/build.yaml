@@ -24,7 +24,7 @@ jobs:
           # - httpclient5
           - httpcore
           - httpcore5
-          # - httpcore5-h2
+          - httpcore5-h2
           - httpmime
           - javax-inject
           - jgit
