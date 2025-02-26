@@ -14,6 +14,7 @@ jobs:
         repos:
           - activej-bytebuf
           - activej-common
+          - activej-types
           - antlr4-runtime
           - auto-service
           - bugsplat
